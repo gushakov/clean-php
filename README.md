@@ -59,7 +59,9 @@ There is a wonderful project by Valeriy Chetkov on GitHib: [php-clean-architectu
 It allows to measure how "clean" the architecture of an application is according to the well-defined  metrics. To run 
 the script you can execute the following command from the root directory of the project:
 
+```
 > php.exe .\vendor\bin\phpca-build-reports .\phpca-config.php
+```
 
 To visualize report, simply open the generated `phpca-reports/index.html` in the browser.
 
