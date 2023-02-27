@@ -4,3 +4,4 @@ vendor
 /db
 .phpunit.result.cache
 /phpca-reports/
+composer.phar
