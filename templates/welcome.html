@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+Hello. You are currently
+
+{% if userLoggedIn %}
+<span>logged in as <b>{{ username }}</b>.</span>
+{% endif %}
+
+{% if not userLoggedIn %}
+<span>not logged in.</span>
+{% endif %}
+
+<ul>
+    <li>
+        <a href="/hello">See a random greeting</a>
+    </li>
+    <li>
+        <a href="/edit-author">Edit the author of a greeting</a>
+    </li>
+    {% if not userLoggedIn %}
+    <li>
+        <a href="/login">Login</a>
+    </li>
+    {% endif %}
+</ul>
+
+</body>
+</html>
