@@ -2,7 +2,7 @@
 
 namespace ExampleApp\Infrastructure\Adapter\Config;
 
-use ExampleApp\Core\Port\Config\ConfigOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Config\ConfigOperationsOutputPort;
 
 class ConfigAdapter implements ConfigOperationsOutputPort
 {

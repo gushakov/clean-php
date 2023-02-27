@@ -5,8 +5,7 @@ namespace ExampleApp\Infrastructure\Adapter\Db;
 use ExampleApp\Core\Model\Greeting;
 use ExampleApp\Core\Model\GreetingId;
 use ExampleApp\Core\Model\InvalidDomainObjectError;
-use ExampleApp\Core\Port\Db\GreetingPersistenceError;
-use ExampleApp\Core\Port\Db\PersistenceGatewayOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Db\GreetingPersistenceError;
 use SleekDB\Exceptions\InvalidArgumentException;
 use SleekDB\Exceptions\IOException;
 use SleekDB\Exceptions\JsonException;
@@ -21,9 +20,9 @@ use SleekDB\Store;
  * Gateway should translate any low-level technical exceptions to
  * the business exceptions, which will be propagated to the use case.
  * @see PersistenceMapper
- * @see GreetingPersistenceError
+ * @see \ExampleApp\Core\Port\Output\Db\GreetingPersistenceError
  */
-class FilePersistenceGateway implements PersistenceGatewayOperationsOutputPort
+class FilePersistenceGateway implements \ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort
 {
 
     private Store $store;
@@ -48,7 +47,7 @@ class FilePersistenceGateway implements PersistenceGatewayOperationsOutputPort
         try {
             $dto = $this->store->findById($id);
         } catch (InvalidArgumentException $e) {
-            throw new GreetingPersistenceError("Invalid ID for DB operation. {$e->getMessage()}");
+            throw new \ExampleApp\Core\Port\Output\Db\GreetingPersistenceError("Invalid ID for DB operation. {$e->getMessage()}");
         }
         if ($dto == null) {
             throw new GreetingPersistenceError("Could not find Greeting with ID: $id in the database");

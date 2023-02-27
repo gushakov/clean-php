@@ -5,8 +5,10 @@ namespace ExampleApp\Core\UseCase\SayHello;
 
 use ExampleApp\Core\Model\GreetingId;
 use ExampleApp\Core\Model\InvalidDomainObjectError;
-use ExampleApp\Core\Port\Db\GreetingPersistenceError;
-use ExampleApp\Core\Port\Db\PersistenceGatewayOperationsOutputPort;
+use ExampleApp\Core\Port\Input\SayHello\SayHelloInputPort;
+use ExampleApp\Core\Port\Output\Db\GreetingPersistenceError;
+use ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort;
+use ExampleApp\Core\Port\Presenter\SayHello\SayHelloPresenterOutputPort;
 
 /**
  * One of the most important concepts in Clean Architecture: a Use Case.

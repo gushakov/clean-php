@@ -5,9 +5,9 @@ namespace ExampleApp\Core\UserCase\SayHello;
 use ExampleApp\Core\Model\Author;
 use ExampleApp\Core\Model\Greeting;
 use ExampleApp\Core\Model\GreetingId;
-use ExampleApp\Core\Port\Db\GreetingPersistenceError;
-use ExampleApp\Core\Port\Db\PersistenceGatewayOperationsOutputPort;
-use ExampleApp\Core\UseCase\SayHello\SayHelloPresenterOutputPort;
+use ExampleApp\Core\Port\Output\Db\GreetingPersistenceError;
+use ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort;
+use ExampleApp\Core\Port\Presenter\SayHello\SayHelloPresenterOutputPort;
 use ExampleApp\Core\UseCase\SayHello\SayHelloUseCase;
 use Exception;
 use Mockery;
@@ -18,7 +18,7 @@ class SayHelloUseCaseTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    private SayHelloPresenterOutputPort $mockPresenter;
+    private \ExampleApp\Core\Port\Presenter\SayHello\SayHelloPresenterOutputPort $mockPresenter;
     private PersistenceGatewayOperationsOutputPort $mockGatewayOps;
 
     protected function setUp(): void

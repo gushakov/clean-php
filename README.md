@@ -56,14 +56,27 @@ Clean Architecture metrics
 ---
 
 There is a wonderful project by Valeriy Chetkov on GitHib: [php-clean-architecture](https://github.com/Chetkov/php-clean-architecture).
-It allows to measure how "clean" the architecture of an application is according to the well-defined  metrics. To run 
-the script you can execute the following command from the root directory of the project:
+It allows to measure how "clean" the architecture of an application is.
+
+You can try to run this script to check if all dependencies are going from outside ("infrastructure") in ("core"):
+
+```
+> php.exe .\vendor\bin\phpca-check .\phpca-config.php
+```
+
+You can also check out other interesting metrics by running either of the following scripts:
 
 ```
 > php.exe .\vendor\bin\phpca-build-reports .\phpca-config.php
 ```
 
-To visualize report, simply open the generated `phpca-reports/index.html` in the browser.
+or
+
+```
+> php.exe .\vendor\bin\phpca-build-reports .\phpca-config-all.php
+```
+
+To visualize reports, simply open the generated `phpca-reports/index.html` in a browser.
 
 References:
 ---

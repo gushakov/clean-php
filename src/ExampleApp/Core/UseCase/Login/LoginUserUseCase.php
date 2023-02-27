@@ -2,9 +2,11 @@
 
 namespace ExampleApp\Core\UseCase\Login;
 
-use ExampleApp\Core\Port\Config\ConfigOperationsOutputPort;
-use ExampleApp\Core\Port\Security\InvalidLoginCredentialsError;
-use ExampleApp\Core\Port\Security\SecurityOperationsOutputPort;
+use ExampleApp\Core\Port\Input\Login\LoginUserInputPort;
+use ExampleApp\Core\Port\Output\Config\ConfigOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Security\InvalidLoginCredentialsError;
+use ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort;
+use ExampleApp\Core\Port\Presenter\Login\LoginPresenterOutputPort;
 
 class LoginUserUseCase implements LoginUserInputPort
 {
@@ -17,7 +19,7 @@ class LoginUserUseCase implements LoginUserInputPort
     /**
      * @param LoginPresenterOutputPort $presenter
      * @param ConfigOperationsOutputPort $configOps
-     * @param SecurityOperationsOutputPort $securityOps
+     * @param \ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort $securityOps
      */
     public function __construct(LoginPresenterOutputPort     $presenter,
                                 ConfigOperationsOutputPort   $configOps,

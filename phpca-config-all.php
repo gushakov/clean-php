@@ -72,33 +72,114 @@ return [
     // Описание компонентов и их ограничений
     'components' => [
 
-        // core
+        // model
         [
-            'name' => 'core',
+            'name' => 'model',
             'roots' => [
                 [
-                    'path' => __DIR__ . '/src/ExampleApp/Core',
-                    'namespace' => '\ExampleApp\Core',
+                    'path' => __DIR__ . '/src/ExampleApp/Core/Model',
+                    'namespace' => '\ExampleApp\Core\Model',
                 ],
-            ],
-
-            // core must not depend on infrastructure
-            'restrictions' => [
-                'forbidden_dependencies' => ['infrastructure'],
             ],
 
         ],
 
-        // infrastructure
+        // input ports
         [
-            'name' => 'infrastructure',
+            'name' => 'input ports',
             'roots' => [
                 [
-                    'path' => __DIR__ . '/src/ExampleApp/Infrastructure',
-                    'namespace' => '\ExampleApp\Infrastructure',
+                    'path' => __DIR__ . '/src/ExampleApp/Core/Port/Input',
+                    'namespace' => '\ExampleApp\Core\Port\Input',
                 ],
             ],
 
+        ],
+
+        // output ports (sec. adapt.)
+        [
+            'name' => 'output ports (sec. adapt.)',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Core/Port/Output',
+                    'namespace' => '\ExampleApp\Core\Port\Output',
+                ],
+            ],
+
+        ],
+
+        // output ports (presenters)
+        [
+            'name' => 'output ports (presenters)',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Core/Port/Presenter',
+                    'namespace' => '\ExampleApp\Core\Port\Presenter',
+                ],
+            ],
+
+        ],
+
+        // use cases
+        [
+            'name' => 'use cases',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Core/UseCase',
+                    'namespace' => '\ExampleApp\Core\UseCase',
+                ],
+            ],
+
+        ],
+
+        // controllers
+        [
+            'name' => 'controllers',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Infrastructure/Adapter/Web/Controller',
+                    'namespace' => '\ExampleApp\Infrastructure\Adapter\Web\Controller',
+                ],
+            ],
+
+        ],
+
+        // presenters
+        [
+            'name' => 'presenters',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Infrastructure/Adapter/Web/Presenter',
+                    'namespace' => '\ExampleApp\Infrastructure\Adapter\Web\Presenter',
+                ],
+            ],
+
+        ],
+
+        // secondary adapters
+        [
+            'name' => 'secondary adapters',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Infrastructure/Adapter',
+                    'namespace' => '\ExampleApp\Infrastructure\Adapter',
+                ],
+            ],
+            'excluded' => [
+                __DIR__ . '/src/ExampleApp/Infrastructure/Adapter/Web',
+            ],
+        ],
+
+        // application
+        [
+            'is_analyze_enabled' => false,
+            'name' => 'application',
+            'roots' => [
+                [
+                    'path' => __DIR__ . '/src/ExampleApp/Infrastructure/Application',
+                    'namespace' => '\ExampleApp\Infrastructure\Application',
+                ],
+            ],
         ],
 
     ],

@@ -2,8 +2,10 @@
 
 namespace ExampleApp\Core\UseCase\Welcome;
 
-use ExampleApp\Core\Port\Security\SecurityOperationsOutputPort;
-use ExampleApp\Core\Port\Security\UserNotAuthenticatedError;
+use ExampleApp\Core\Port\Input\Welcome\WelcomeInputPort;
+use ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError;
+use ExampleApp\Core\Port\Presenter\Welcome\WelcomePresenterOutputPort;
 
 class WelcomeUseCase implements WelcomeInputPort
 {

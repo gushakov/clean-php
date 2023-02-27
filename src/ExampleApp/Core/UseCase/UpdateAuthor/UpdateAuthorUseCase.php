@@ -4,10 +4,12 @@ namespace ExampleApp\Core\UseCase\UpdateAuthor;
 
 use ExampleApp\Core\Model\GreetingId;
 use ExampleApp\Core\Model\InvalidDomainObjectError;
-use ExampleApp\Core\Port\Db\GreetingPersistenceError;
-use ExampleApp\Core\Port\Db\PersistenceGatewayOperationsOutputPort;
-use ExampleApp\Core\Port\Security\SecurityOperationsOutputPort;
-use ExampleApp\Core\Port\Security\UserNotAuthenticatedError;
+use ExampleApp\Core\Port\Input\UpdateAuthor\UpdateAuthorInputPort;
+use ExampleApp\Core\Port\Output\Db\GreetingPersistenceError;
+use ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort;
+use ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError;
+use ExampleApp\Core\Port\Presenter\UpdateAuthor\UpdateAuthorPresenterOutputPort;
 use TypeError;
 
 class UpdateAuthorUseCase implements UpdateAuthorInputPort
@@ -20,7 +22,7 @@ class UpdateAuthorUseCase implements UpdateAuthorInputPort
 
     /**
      * @param UpdateAuthorPresenterOutputPort $presenter
-     * @param SecurityOperationsOutputPort $securityOps
+     * @param \ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort $securityOps
      * @param PersistenceGatewayOperationsOutputPort $gatewayOps
      */
     public function __construct(UpdateAuthorPresenterOutputPort        $presenter,
