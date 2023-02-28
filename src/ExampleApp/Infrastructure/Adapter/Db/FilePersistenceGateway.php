@@ -6,6 +6,7 @@ use ExampleApp\Core\Model\Greeting;
 use ExampleApp\Core\Model\GreetingId;
 use ExampleApp\Core\Model\InvalidDomainObjectError;
 use ExampleApp\Core\Port\Output\Db\GreetingPersistenceError;
+use ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort;
 use SleekDB\Exceptions\InvalidArgumentException;
 use SleekDB\Exceptions\IOException;
 use SleekDB\Exceptions\JsonException;
@@ -22,7 +23,7 @@ use SleekDB\Store;
  * @see PersistenceMapper
  * @see \ExampleApp\Core\Port\Output\Db\GreetingPersistenceError
  */
-class FilePersistenceGateway implements \ExampleApp\Core\Port\Output\Db\PersistenceGatewayOperationsOutputPort
+class FilePersistenceGateway implements PersistenceGatewayOperationsOutputPort
 {
 
     private Store $store;
