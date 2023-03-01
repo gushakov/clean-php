@@ -18,7 +18,7 @@ class SayHelloUseCaseTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    private \ExampleApp\Core\Port\Presenter\SayHello\SayHelloPresenterOutputPort $mockPresenter;
+    private SayHelloPresenterOutputPort $mockPresenter;
     private PersistenceGatewayOperationsOutputPort $mockGatewayOps;
 
     protected function setUp(): void

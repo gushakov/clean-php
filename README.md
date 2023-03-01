@@ -13,6 +13,9 @@ Please, consult the copyright and licence notices distributed with the orignal c
 General
 ---
 
+There is an article on Medium: ["Clean Architecture with PHP"](https://medium.com/unil-ci-software-engineering/clean-architecture-with-php-22de915a6c50), 
+which references this repository.
+
 The idea is to build a relatively simple PHP application but without using any framework. I followed closely the
 recipe given in a wonderful and very detailed [article](https://kevinsmith.io/modern-php-without-a-framework/) by 
 Kevin Smith. 
