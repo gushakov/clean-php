@@ -13,7 +13,7 @@ class Author
      */
     public function __construct(string $name)
     {
-        if (empty($name)){
+        if (empty($name)) {
             throw new InvalidDomainObjectError("Author's name must not be empty");
         }
         $this->name = $name;

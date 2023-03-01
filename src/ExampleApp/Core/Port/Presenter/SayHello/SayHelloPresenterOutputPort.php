@@ -9,7 +9,7 @@ use ExampleApp\Core\Port\Presenter\ErrorHandlingPresenterOutputPort;
  * Interface for the presenter. It is an output port through which
  * a use case will communicate back to the caller. All Presenters
  * should provide a way to present errors.
- * @see \ExampleApp\Core\Port\Presenter\ErrorHandlingPresenterOutputPort
+ * @see ErrorHandlingPresenterOutputPort
  */
 interface SayHelloPresenterOutputPort extends ErrorHandlingPresenterOutputPort
 {

@@ -17,8 +17,8 @@ class UpdateAuthorPresenter extends AbstractWebPresenter implements UpdateAuthor
     public function presentAuthorUpdatedSuccessfully(GreetingId $greetingId)
     {
         $this->presentTemplatedResponse('update-author-success.html',
-        [
-            'greetingId' => $greetingId->getId()
-        ]);
+            [
+                'greetingId' => $greetingId->getId()
+            ]);
     }
 }

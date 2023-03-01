@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ExampleApp\Infrastructure\Adapter\Web\Controller\SayHello;
 
 
+use ExampleApp\Core\Port\Input\SayHello\SayHelloInputPort;
 
 /**
  * Controller will be invoked by the dispatcher. It should have
@@ -17,9 +18,9 @@ namespace ExampleApp\Infrastructure\Adapter\Web\Controller\SayHello;
  */
 class SayHelloController
 {
-    private \ExampleApp\Core\Port\Input\SayHello\SayHelloInputPort $useCase;
+    private SayHelloInputPort $useCase;
 
-    public function __construct(\ExampleApp\Core\Port\Input\SayHello\SayHelloInputPort $useCase)
+    public function __construct(SayHelloInputPort $useCase)
     {
         $this->useCase = $useCase;
     }

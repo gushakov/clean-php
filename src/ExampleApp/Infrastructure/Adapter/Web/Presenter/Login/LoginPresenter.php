@@ -2,9 +2,10 @@
 
 namespace ExampleApp\Infrastructure\Adapter\Web\Presenter\Login;
 
+use ExampleApp\Core\Port\Presenter\Login\LoginPresenterOutputPort;
 use ExampleApp\Infrastructure\Adapter\Web\Presenter\AbstractWebPresenter;
 
-class LoginPresenter extends AbstractWebPresenter implements \ExampleApp\Core\Port\Presenter\Login\LoginPresenterOutputPort
+class LoginPresenter extends AbstractWebPresenter implements LoginPresenterOutputPort
 {
 
     public function showLoginForm(): void

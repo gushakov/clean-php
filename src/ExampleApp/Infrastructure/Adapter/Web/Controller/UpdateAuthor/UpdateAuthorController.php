@@ -11,7 +11,7 @@ class UpdateAuthorController
     private UpdateAuthorInputPort $useCase;
 
     /**
-     * @param \ExampleApp\Core\Port\Input\UpdateAuthor\UpdateAuthorInputPort $useCase
+     * @param UpdateAuthorInputPort $useCase
      */
     public function __construct(UpdateAuthorInputPort $useCase)
     {

@@ -14,7 +14,8 @@ class GreetingId
     /**
      * @throws InvalidDomainObjectError
      */
-    public static function of(int $id): GreetingId {
+    public static function of(int $id): GreetingId
+    {
         return new GreetingId($id);
     }
 

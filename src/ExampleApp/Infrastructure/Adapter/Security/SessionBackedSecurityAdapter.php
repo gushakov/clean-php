@@ -3,9 +3,10 @@
 namespace ExampleApp\Infrastructure\Adapter\Security;
 
 use ExampleApp\Core\Port\Output\Security\InvalidLoginCredentialsError;
+use ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort;
 use ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError;
 
-class SessionBackedSecurityAdapter implements \ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort
+class SessionBackedSecurityAdapter implements SecurityOperationsOutputPort
 {
 
     public function __construct()
@@ -13,12 +14,12 @@ class SessionBackedSecurityAdapter implements \ExampleApp\Core\Port\Output\Secur
     }
 
     /**
-     * @throws \ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError
+     * @throws UserNotAuthenticatedError
      */
     public function username(): string
     {
         if (!isset($_SESSION['username'])) {
-            throw new \ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError("User not authenticated");
+            throw new UserNotAuthenticatedError("User not authenticated");
         }
 
         return $_SESSION['username'];
@@ -30,7 +31,7 @@ class SessionBackedSecurityAdapter implements \ExampleApp\Core\Port\Output\Secur
     }
 
     /**
-     * @throws \ExampleApp\Core\Port\Output\Security\InvalidLoginCredentialsError
+     * @throws InvalidLoginCredentialsError
      */
     public function registerLogin(array $configuredCredentials, array $submittedCredentials): void
     {
@@ -50,7 +51,7 @@ class SessionBackedSecurityAdapter implements \ExampleApp\Core\Port\Output\Secur
     public function assertUserIsLoggedIn(): void
     {
         if (!$this->isUserLoggedIn()) {
-            throw new \ExampleApp\Core\Port\Output\Security\UserNotAuthenticatedError("Cannot perform this action if not authenticated");
+            throw new UserNotAuthenticatedError("Cannot perform this action if not authenticated");
         }
     }
 }

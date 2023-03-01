@@ -19,7 +19,7 @@ class LoginUserUseCase implements LoginUserInputPort
     /**
      * @param LoginPresenterOutputPort $presenter
      * @param ConfigOperationsOutputPort $configOps
-     * @param \ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort $securityOps
+     * @param SecurityOperationsOutputPort $securityOps
      */
     public function __construct(LoginPresenterOutputPort     $presenter,
                                 ConfigOperationsOutputPort   $configOps,

@@ -21,7 +21,7 @@ use SleekDB\Store;
  * Gateway should translate any low-level technical exceptions to
  * the business exceptions, which will be propagated to the use case.
  * @see PersistenceMapper
- * @see \ExampleApp\Core\Port\Output\Db\GreetingPersistenceError
+ * @see GreetingPersistenceError
  */
 class FilePersistenceGateway implements PersistenceGatewayOperationsOutputPort
 {
@@ -48,7 +48,7 @@ class FilePersistenceGateway implements PersistenceGatewayOperationsOutputPort
         try {
             $dto = $this->store->findById($id);
         } catch (InvalidArgumentException $e) {
-            throw new \ExampleApp\Core\Port\Output\Db\GreetingPersistenceError("Invalid ID for DB operation. {$e->getMessage()}");
+            throw new GreetingPersistenceError("Invalid ID for DB operation. {$e->getMessage()}");
         }
         if ($dto == null) {
             throw new GreetingPersistenceError("Could not find Greeting with ID: $id in the database");

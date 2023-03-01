@@ -22,7 +22,7 @@ class UpdateAuthorUseCase implements UpdateAuthorInputPort
 
     /**
      * @param UpdateAuthorPresenterOutputPort $presenter
-     * @param \ExampleApp\Core\Port\Output\Security\SecurityOperationsOutputPort $securityOps
+     * @param SecurityOperationsOutputPort $securityOps
      * @param PersistenceGatewayOperationsOutputPort $gatewayOps
      */
     public function __construct(UpdateAuthorPresenterOutputPort        $presenter,
